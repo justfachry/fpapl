@@ -1,35 +1,20 @@
 <?php
 
-$namespace = 'Idy\Idea\Presentation\Controllers\Web';
-$module = 'idea';
+$namespace = 'loweffortgooglecalendar\Presentation\Controllers\Web';
+$module = 'schedule';
 
-$router->addGet('/idea/add', [
+$router->addGet('/schedule/add', [
     'namespace' => $namespace,
     'module' => $module,
-    'controller' => 'idea',
+    'controller' => 'schedule',
     'action' => 'addPage'
 ]);
 
-$router->addPost('/idea/add', [
+$router->addPost('/schedule/add', [
     'namespace' => $namespace,
     'module' => $module,
-    'controller' => 'idea',
+    'controller' => 'schedule',
     'action' => 'add'
 ]);
-
-$router->addPost('/idea/vote', [
-    'namespace' => $namespace,
-    'module' => $module,
-    'controller' => 'idea',
-    'action' => 'vote'
-]);
-
-$router->addPost('/idea/rate', [
-    'namespace' => $namespace,
-    'module' => $module,
-    'controller' => 'idea',
-    'action' => 'rate'
-]);
-
 
 return $router;

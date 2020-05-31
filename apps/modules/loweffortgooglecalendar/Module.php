@@ -1,6 +1,6 @@
 <?php
 
-namespace Idy\Idea;
+namespace loweffortgooglecalendar;
 
 use Phalcon\DiInterface;
 use Phalcon\Loader;
@@ -13,16 +13,16 @@ class Module implements ModuleDefinitionInterface
         $loader = new Loader();
 
         $loader->registerNamespaces([
-            'Idy\Idea\Domain\Model' => __DIR__ . '/domain/model',   
-            'Idy\Idea\Domain\Repository' => __DIR__ . '/domain/repository',
-            'Idy\Idea\Domain\Transport' => __DIR__ . '/domain/transport',
-            'Idy\Idea\Domain\Exception' => __DIR__ . '/domain/exception',
-            'Idy\Idea\Infrastructure\Persistence' => __DIR__ . '/infrastructure/persistence',
-            'Idy\Idea\Infrastructure\Transport' => __DIR__ . '/infrastructure/transport',
-            'Idy\Idea\Application' => __DIR__ . '/application',
-            'Idy\Idea\Presentation\Controllers\Web' => __DIR__ . '/presentation/controllers/web',
-            'Idy\Idea\Presentation\Controllers\Api' => __DIR__ . '/presentation/controllers/api',
-            'Idy\Idea\Presentation\Controllers\Validators' => __DIR__ . '/presentation/controllers/validators',
+            'loweffortgooglecalendar\Domain\Model' => __DIR__ . '/domain/model',   
+            'loweffortgooglecalendar\Domain\Repository' => __DIR__ . '/domain/repository',
+            'loweffortgooglecalendar\Domain\Transport' => __DIR__ . '/domain/transport',
+            'loweffortgooglecalendar\Domain\Exception' => __DIR__ . '/domain/exception',
+            'loweffortgooglecalendar\Infrastructure\Persistence' => __DIR__ . '/infrastructure/persistence',
+            'loweffortgooglecalendar\Infrastructure\Transport' => __DIR__ . '/infrastructure/transport',
+            'loweffortgooglecalendar\Application' => __DIR__ . '/application',
+            'loweffortgooglecalendar\Presentation\Controllers\Web' => __DIR__ . '/presentation/controllers/web',
+            'loweffortgooglecalendar\Presentation\Controllers\Api' => __DIR__ . '/presentation/controllers/api',
+            'loweffortgooglecalendar\Presentation\Controllers\Validators' => __DIR__ . '/presentation/controllers/validators',
         ]);
 
         $loader->register();

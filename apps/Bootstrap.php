@@ -6,8 +6,8 @@ use Phalcon\DI\FactoryDefault;
 
 class Bootstrap extends Application
 {
-	private $modules;
-	private $defaultModule;
+	protected $modules;
+	protected $defaultModule;
 
 	public function __construct($defaultModule)
 	{

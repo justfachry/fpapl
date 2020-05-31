@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Idy\Idea\Infrastructure\Transport;
+namespace loweffortgooglecalendar\Infrastructure\Transport;
 
 
-use Idy\Idea\Domain\Transport\MailerInterface;
+use loweffortgooglecalendar\Domain\Transport\MailerInterface;
 use Swift_Mailer;
 use Swift_Message;
 

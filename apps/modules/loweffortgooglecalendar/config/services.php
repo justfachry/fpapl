@@ -1,12 +1,10 @@
 <?php
 
-use Idy\Idea\Application\CreateNewIdea\CreateNewIdeaService;
-use Idy\Idea\Application\RateIdea\RateIdeaService;
-use Idy\Idea\Application\ViewAllIdeas\ViewAllIdeasService;
-use Idy\Idea\Application\VoteIdea\VoteIdeaService;
-use Idy\Idea\Infrastructure\Transport\SwiftMailer;
+use loweffortgooglecalendar\Application\CreateNewSchedule\CreateNewScheduleService;
+use loweffortgooglecalendar\Application\ViewAllSchedules\ViewAllSchedulesService;
+use loweffortgooglecalendar\Infrastructure\Transport\SwiftMailer;
 use Phalcon\Mvc\View;
-use Idy\Idea\Infrastructure\Persistence\SqlIdeaRepository;
+use loweffortgooglecalendar\Infrastructure\Persistence\SqlScheduleRepository;
 
 $di['voltServiceMail'] = function($view) use ($di) {
 
@@ -70,22 +68,14 @@ $di->set('swiftMailer', function () use ($di) {
     return new SwiftMailer($mailer);
 });
 
-$di->set('ideaRepository', function() use ($di) {
-    return new SqlIdeaRepository($di->get('db'));
+$di->set('scheduleRepository', function() use ($di) {
+    return new SqlScheduleRepository($di->get('db'));
 });
 
-$di->set('viewAllIdeasService', function () use ($di) {
-   return new ViewAllIdeasService($di->get('ideaRepository'));
+$di->set('viewAllSchedulesService', function () use ($di) {
+   return new ViewAllSchedulesService($di->get('scheduleRepository'));
 });
 
-$di->set('createNewIdeaService', function () use ($di) {
-   return new CreateNewIdeaService($di->get('ideaRepository'));
-});
-
-$di->set('voteIdeaService', function () use ($di) {
-   return new VoteIdeaService($di->get('ideaRepository'));
-});
-
-$di->set('rateIdeaService', function () use ($di) {
-   return new RateIdeaService($di->get('ideaRepository'));
+$di->set('createNewScheduleService', function () use ($di) {
+   return new CreateNewScheduleService($di->get('scheduleRepository'));
 });
