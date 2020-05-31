@@ -1,6 +1,6 @@
 <?php
 
-use Idy\Idea\Application\SwiftMailer;
+use loweffortgooglecalendar\Application\SwiftMailer;
 use Phalcon\Logger\Adapter\File as Logger;
 use Phalcon\Session\Adapter\Files as Session;
 use Phalcon\Http\Response\Cookies;

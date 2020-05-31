@@ -1,6 +1,6 @@
 <?php
 
-namespace Idy\Idea\Presentation\Controllers\Web;
+namespace loweffortgooglecalendar\Presentation\Controllers\Web;
 
 use loweffortgooglecalendar\Application\CreateNewIdea\CreateNewScheduleRequest;
 use loweffortgooglecalendar\Application\CreateNewIdea\CreateNewScheduleService;

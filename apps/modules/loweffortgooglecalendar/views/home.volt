@@ -105,17 +105,13 @@
     </div>
 
     <ul>
-        {% for idea in ideas %}
+        {% for schedule in schedules %}
         <li>
             <div class="sticky">
-                <h2>{{ idea.title() }}</h2>
-                <p>{{ idea.description() }}</p>
-                <div class="author">{{ idea.author().name() }}</div>
-                <div class="email">{{ idea.author().email() }}</div>
-                <div class="rating">Ratings: {{ idea.numberOfRatings() }} | Average rating: {{ idea.averageRating() }} <button class="btn btn-warning rate" ideaId="{{ idea.id().id() }}">Rate</button></div>
-                <div class="rating">Votes: {{ idea.votes() }}
-                    <form action="/idea/vote" method="post"><input type="hidden" name="ideaId" value="{{ idea.id().id() }}"> <button class="btn btn-success" type="submit">Vote</button></form>
-                </div>
+                <h2>{{ schedule.title() }}</h2>
+                <p>{{ schedule.description() }}</p>
+                <div class="author">{{ schedule.user().name() }}</div>
+                <div class="date">{{ schedule.date().date() }}</div>
             </div>
         </li>
         {% endfor %}
@@ -156,9 +152,9 @@
         let _ideaId = null;
 
         $(".rate").click(function () {
-           const ideaId = $(this).attr('ideaId');
-           _ideaId = ideaId;
-           console.log(ideaId);
+           const scheduleId = $(this).attr('scheduleId');
+           _scheduleId = scheduleId;
+           console.log(scheduleId);
            $(".modal").modal('show');
         });
 
@@ -172,26 +168,10 @@
                 return false;
             }
 
-            console.log(value, name, _ideaId);
+            console.log(value, name, _scheduleId);
 
             $('.btn-form-rate').attr('disabled', true);
             $('.btn-form-rate').text('Loading...');
-
-            try {
-                const res = await $.ajax({
-                    url: '/idea/rate',
-                    method: 'post',
-                    data: {value, name, ideaId: _ideaId}
-                });
-                alert(res);
-                location.reload();
-            } catch (e) {
-                alert(e.responseJSON);
-                console.log(e);
-            } finally {
-                $('.btn-form-rate').attr('disabled', false);
-                $('.btn-form-rate').text('Rate');
-            }
 
         });
 

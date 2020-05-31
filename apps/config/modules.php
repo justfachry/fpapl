@@ -2,11 +2,11 @@
 
 return array(
     'idea' => [
-        'namespace' => 'Idy\Idea',
-        'webControllerNamespace' => 'Idy\Idea\Presentation\Controllers\Web',
-        'apiControllerNamespace' => 'Idy\Idea\Presentation\Controllers\Api',
-        'className' => 'Idy\Idea\Module',
-        'path' => APP_PATH . '/modules/idea/Module.php',
+        'namespace' => 'loweffotgooglecalendar',
+        'webControllerNamespace' => 'loweffortgooglecalendar\Presentation\Controllers\Web',
+        'apiControllerNamespace' => 'loweffortgooglecalendar\Presentation\Controllers\Api',
+        'className' => 'loweffortgooglecalendar\Module',
+        'path' => APP_PATH . '/modules/loweffortgooglecalendar/Module.php',
         'userDefinedRouting' => true,
         'defaultRouting' => true,
         'defaultController' => 'idea',

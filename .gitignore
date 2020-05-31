@@ -227,6 +227,7 @@ $RECYCLE.BIN/
 
 ### Composer ###
 composer.phar
+composer.lock
 /vendor/
 
 # End of https://www.gitignore.io/api/vim,linux,macos,phalcon,windows,phpstorm,sublimetext,visualstudiocode

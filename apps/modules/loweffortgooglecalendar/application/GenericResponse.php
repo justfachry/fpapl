@@ -1,6 +1,6 @@
 <?php
 
-namespace Idy\Idea\Application;
+namespace loweffortgooglecalendar\Application;
 
 class GenericResponse
 {
